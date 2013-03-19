@@ -1,3 +1,6 @@
+// Settings
+var mongo_url = process.env.MONGO_URL || "mongodb://localhost/todos"
+
 
 /**
  * Module dependencies.
@@ -10,7 +13,7 @@ var express = require('express')
   , path = require('path')
   , mongoose = require('mongoose')
   , io = require('socket.io')
-  , db = mongoose.connect('mongodb://localhost/todos')
+  , db = mongoose.connect(mongo_url)
   , Schema = mongoose.Schema
   , ObjectID = Schema.ObjectId
   , Todo = require('./models/todos.js').init(Schema, mongoose);
