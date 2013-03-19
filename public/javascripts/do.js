@@ -2,8 +2,8 @@
 jQuery(function($){
 	"use strict";
 
-	//client side socket.io
-	var socket = io.connect('http://ishuah.com:8080');
+	// client side socket.io  - connect to our originating domain
+	var socket = io.connect("http://" + window.location.host);
 	var app = {
 
 		init: function(){
